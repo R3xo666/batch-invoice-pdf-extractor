@@ -1,0 +1,22 @@
+# Python virtual environment
+venv/
+.venv/
+env/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Pytest / coverage cache
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Logs and transient runtime outputs
+*.log
+output/batch_processing.log
+
+# Operating system artifacts
+.DS_Store
+Thumbs.db

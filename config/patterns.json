@@ -1,0 +1,73 @@
+{
+  "invoice_number_patterns": [
+    "(?i)(?:invoice\\s*(?:no\\.?|number|num|#|id)|fakturanummer(?:\\s*\\/\\s*invoice\\s*#?)?|inv\\s*#|bill\\s*(?:no\\.?|number|#))[:\\s#]+([A-Z0-9][A-Z0-9\\-\\/_]{2,30})",
+    "(?i)(?:invoice|bill)\\s*[:#]\\s*([A-Z0-9][A-Z0-9\\-\\/_]{2,30})",
+    "(?i)\\b(?:INV|BILL)-[A-Z0-9\\-\\/_]{3,20}\\b"
+  ],
+  "date_patterns": [
+    "(?i)(?:invoice\\s*date|bill(?:ing)?\\s*date|issue\\s*date|date\\s*of\\s*issue|fakturadatum(?:\\s*\\/\\s*date)?|date)[:\\s]*([A-Za-z0-9\\s,\\-\\/\\.]+)",
+    "\\b(\\d{4}[\\-\\/]\\d{1,2}[\\-\\/]\\d{1,2})\\b",
+    "\\b(\\d{1,2}[\\-\\/]\\d{1,2}[\\-\\/]\\d{2,4})\\b",
+    "\\b(\\d{1,2}\\s+(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\\s+\\d{4})\\b",
+    "\\b((?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\\s+\\d{1,2},?\\s+\\d{4})\\b"
+  ],
+  "date_anchor_keywords": [
+    "invoice date",
+    "issue date",
+    "date of issue",
+    "fakturadatum",
+    "billing date",
+    "dated",
+    "date"
+  ],
+  "vendor_anchor_keywords": [
+    "vendor:",
+    "supplier:",
+    "from:",
+    "bill from:",
+    "issued by:"
+  ],
+  "vendor_ignore_terms": [
+    "invoice",
+    "tax invoice",
+    "commercial invoice",
+    "bill to",
+    "invoice to",
+    "ship to",
+    "billed to",
+    "client",
+    "customer",
+    "due date",
+    "payment terms",
+    "total due",
+    "subtotal",
+    "fakturanummer",
+    "fakturadatum",
+    "official receipt"
+  ],
+  "subtotal_patterns": [
+    "(?i)(?:sub[\\s\\-]?total|net\\s*amount|amount\\s*before\\s*tax)[:\\s]*(?:EUR|USD|GBP|[$€£₹])?\\s*([\\d\\.,]+)",
+    "(?i)(?:sub[\\s\\-]?total)[^\\d\\n]*(?:EUR|USD|GBP|[$€£₹])?\\s*([\\d\\.,]+)"
+  ],
+  "tax_patterns": [
+    "(?i)(?:tax|vat|gst|sales\\s*tax)(?:\\s*(?:rate|amount))?(?:\\s*\\(?[0-9\\.]+%?\\)?)?[:\\s]+(?:EUR|USD|GBP|[$€£₹])?\\s*([0-9\\.,]+)",
+    "(?i)(?:vat\\s*\\d+%?)[^\\d\\n]*(?:EUR|USD|GBP|[$€£₹])?\\s*([\\d\\.,]+)"
+  ],
+  "total_due_patterns": [
+    "(?i)(?:total\\s*amount\\s*due|total\\s*due|balance\\s*due|grand\\s*total|invoice\\s*total|total\\s*payable)\\b[:\\s]*(?:EUR|USD|GBP|[$€£₹])?\\s*([\\d\\.,]+)",
+    "(?i)\\b(?<!sub)(?<!sub-)total[:\\s]*(?:EUR|USD|GBP|[$€£₹])?\\s*([\\d\\.,]+)"
+  ],
+  "currency_symbols": [
+    "$",
+    "€",
+    "£",
+    "₹",
+    "¥",
+    "USD",
+    "EUR",
+    "GBP",
+    "INR",
+    "CAD",
+    "AUD"
+  ]
+}
